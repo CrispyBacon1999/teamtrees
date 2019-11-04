@@ -1,4 +1,4 @@
-import .trees
+import trees
 import time
 
 

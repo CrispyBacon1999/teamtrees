@@ -25,15 +25,17 @@ def load(last, lastTime, trees=True, topDonations=False, recentDonations=False):
     return (count, curr_time)
 
 
-delay = float(argv[1]) if len(argv) > 1 else 10.0
+if __name__ == "__main__":
+    delay = float(argv[1]) if len(argv) > 1 else 10.0
 
-os.system('mode 72,11')
-os.system(f'title Team Trees Live Count ({delay}s)')
-last = load(-1, -1)
-while True:
+    os.system('mode 72,11')
+    os.system(f'title Team Trees Live Count ({delay}s)')
+    last = load(-1, -1)
 
-    try:
-        load(*last)
-    except:
-        pass
-    time.sleep(delay)
+    while True:
+
+        try:
+            load(*last)
+        except:
+            pass
+        time.sleep(delay)
